@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/cold"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ScrollView android:layout_height="match_parent" android:layout_width="match_parent">
+
+
+        <RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent"
+            android:layout_marginTop="30dp">
+
+            <TextView android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintTop_toTopOf="@+id/usename_reg2"
+                app:layout_constraintBottom_toBottomOf="@+id/loading_reg"
+                android:fontFamily="@font/ibm_plex_sans_bold"
+                android:text="Quiz App"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/title_reg"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="86sp"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@drawable/edit_text_layout"
+                android:layout_marginTop="30dp"
+                android:id="@+id/usename_reg2"
+                style="@style/TextInputLayout"
+                android:layout_below="@+id/title_reg">
+
+                <com.google.android.material.textfield.TextInputEditText android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/username_reg" android:textColor="@color/black" android:textSize="18sp"
+                    android:fontFamily="@font/ibm_plex_sans_medium"
+                    style="@style/UpdateProfileEditText" android:inputType="none|text|textCapSentences|textEmailAddress"
+                    android:singleLine="true" android:hint="Enter Email"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:background="@drawable/edit_text_layout"
+                android:layout_marginTop="20dp" android:id="@+id/password_reg2" style="@style/TextInputLayout"
+                android:layout_below="@+id/usename_reg2">
+
+                <com.google.android.material.textfield.TextInputEditText android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/ibm_plex_sans_medium"
+                    android:id="@+id/password_reg" android:textColor="@color/black" android:textSize="18sp"
+                    style="@style/UpdateProfileEditText" android:inputType="none|text|textCapSentences|textPassword"
+                    android:singleLine="true" android:hint="Password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/red"
+                android:fontFamily="@font/ibm_plex_sans_light"
+                android:text="Show Password" android:id="@+id/show_register" android:textSize="16sp"
+                android:layout_below="@+id/password_reg2" android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp" android:layout_gravity="center"/>
+
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:layout_marginTop="30dp" android:text="Register"
+                android:id="@+id/regiter_reg"
+                android:background="@color/orange"
+                android:layout_below="@+id/show_register"
+                android:layout_gravity="center" android:layout_centerHorizontal="true" android:layout_marginBottom="30dp"
+                android:paddingRight="30dp" android:paddingLeft="30dp"/>
+
+            <ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:layout_marginTop="20dp" android:id="@+id/loading_reg" android:layout_below="@+id/regiter_reg"
+                android:layout_gravity="center" android:layout_centerHorizontal="true" android:layout_marginBottom="30dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

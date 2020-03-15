@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/aqua"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/tv_questionno"
+                android:gravity="center"
+                android:fontFamily="@font/ibmplexsans_thinitalic"
+                android:background="@color/black"
+                android:textColor="@color/greenYellow"
+                android:text="Question"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:fontFamily="@font/ibm_plex_sans_bold"
+                android:background="@color/black"
+                android:shadowColor="@color/black"
+                android:id="@+id/tv_timer"
+                android:gravity="center"
+                android:text="0/0"
+                android:textColor="@android:color/holo_red_light"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+
+            <ImageView
+                android:id="@+id/img_people"
+                android:layout_below="@+id/tv_timer"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="300dp"
+                android:layout_height="300dp" />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:id="@+id/tv_question"
+                android:gravity="center"
+                android:text="Question"
+                android:fontFamily="@font/ibm_plex_sans_light"
+                android:textColor="@color/greenYellow"
+                android:textStyle="bold"
+                android:background="@color/black"
+                android:textSize="18sp"
+                android:layout_below="@+id/img_people"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/tv_question"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_layout"
+                android:id="@+id/et_box"
+                android:layout_marginTop="30dp"
+                style="@style/TextInputLayout"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/et_answer"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:inputType="none|text|textCapSentences|textMultiLine"
+                    style="@style/UpdateProfileEditText"
+                    android:fontFamily="@font/ibm_plex_sans_medium"
+                    android:gravity="center"
+                    android:hint="Your Answer" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/forest_green"
+                android:layout_below="@+id/et_box"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:padding="10dp"
+                android:fontFamily="@font/ibm_plex_sans_bold"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:text="Save and Next" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

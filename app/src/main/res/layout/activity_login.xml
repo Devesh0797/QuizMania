@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/cold"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/edit_text_layout"
+                android:id="@+id/et_id1"
+                android:layout_marginTop="30dp"
+                style="@style/TextInputLayout"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/et_id"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    style="@style/UpdateProfileEditText"
+                    android:hint="Enter Your Gmail_ID"
+                    android:inputType="textWebEmailAddress"
+                    android:fontFamily="@font/ibm_plex_sans_medium"
+                    android:gravity="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_below="@id/et_id1"
+                android:background="@drawable/edit_text_layout"
+                android:id="@+id/et_pas1"
+                android:layout_marginTop="30dp"
+                style="@style/TextInputLayout"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/et_pas"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    style="@style/UpdateProfileEditText"
+                    android:hint="Enter Password"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/ibm_plex_sans_medium"
+                    android:gravity="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <Button
+                android:id="@+id/btn_log"
+                android:text="Login"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/et_pas1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.876" />
+
+            <TextView
+                android:id="@+id/tv_Signup"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/red"
+                android:layout_below="@+id/btn_log"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="OR" />
+
+            <Button
+                android:id="@+id/btn_sign"
+                android:layout_below="@id/tv_Signup"
+                android:text="Sign Up"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/orange"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.876" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

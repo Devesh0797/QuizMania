@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".RulesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textSize="24sp"
+                android:fontFamily="@font/ibm_plex_sans_bold"
+                android:id="@+id/tv_rulesheading"
+                android:textColor="@color/red"
+                android:gravity="center"
+                android:text="Know The Rules"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_rulesheading"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/tv_rules"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/ibm_plex_sans_medium"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="1. There are Total 5 questions. \n\n 2. Each correct Answer gives you 1 Point.
+\n\n 3. There is no Negative Marking.\n\n 4. You have to write your Answer in the white coloured box. \n\n
+ 5. You can also submit Empty boxes. \n\n 6. There is timer on Upper Right side of the Mobile Screen.
+\n\n 7. Every question has its own time. \n\n 8. The Question number is written on upper left side of the Screen.
+\n\n 9. You can see Your Answers after completing the quiz."/>
+
+            <Button
+                android:id="@+id/btn_startqiz"
+                android:layout_below="@+id/tv_rules"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"
+                android:text="Start Quiz" />
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>
