@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public FirebaseAuth firebaseAuth;
     private DatabaseReference rootRef,demoRef,databaseReference;
-    private Button b1,b2;
+    private Button b1,b2,b3;
     private ImageView img;
     private TextView t1,t2;
     private ProgressDialog progressDialog;
@@ -47,12 +47,13 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        FirebaseApp.initializeApp(this);
+
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
         b1=findViewById(R.id.startquiz);
+        b3=findViewById(R.id.btn_quiz);
         b2=findViewById(R.id.btn_deleteattemp);
         t1=findViewById(R.id.tv_name);
         t2=findViewById(R.id.tv_gender);
@@ -62,10 +63,10 @@ public class HomeActivity extends AppCompatActivity {
         this.rootRef = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = this.firebaseAuth.getCurrentUser();
-        
+
 
         if (user == null) {
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             finish();
         }
         else {
@@ -173,6 +174,12 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 databaseReference.removeValue();
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,QuizActivity.class));
             }
         });
     }

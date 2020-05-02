@@ -76,5 +76,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Delete"
-        android:visibility="gone" />
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_quiz"
+        android:layout_below="@+id/btn_deleteattemp"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Quiz" />
 </RelativeLayout>

@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "370330969111",
+    "firebase_url": "https://quiz-app-1edb1.firebaseio.com",
+    "project_id": "quiz-app-1edb1",
+    "storage_bucket": "quiz-app-1edb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370330969111:android:9b659712dca93bc17c2852",
+        "android_client_info": {
+          "package_name": "com.dev.quizmania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370330969111-ds5jbun51vgjvot624se3efisc7b3tlo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dev.quizmania",
+            "certificate_hash": "1544a4b61024951e7c45b43336d973c309e62cbb"
+          }
+        },
+        {
+          "client_id": "370330969111-486kqs8f7hbpotu3mnqpqhtbs3vf0a1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRiIIolf2H8EDotPPvqO-w2bE3yVY-hWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370330969111-486kqs8f7hbpotu3mnqpqhtbs3vf0a1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370330969111:android:177a29b6d402845d7c2852",
+        "android_client_info": {
+          "package_name": "com.devesh.quizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370330969111-jantthuciu67ojcbf4ep5tctdno5qgsu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devesh.quizapp",
+            "certificate_hash": "1544a4b61024951e7c45b43336d973c309e62cbb"
+          }
+        },
+        {
+          "client_id": "370330969111-55nkfbb3c0ncrj7vlb919egqce6nbarm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devesh.quizapp",
+            "certificate_hash": "84295caa9c63d768d09a0f8f891ed7c8d7afa543"
+          }
+        },
+        {
+          "client_id": "370330969111-486kqs8f7hbpotu3mnqpqhtbs3vf0a1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRiIIolf2H8EDotPPvqO-w2bE3yVY-hWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370330969111-486kqs8f7hbpotu3mnqpqhtbs3vf0a1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
