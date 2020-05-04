@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.Random;
+
 public class QuizActivity extends AppCompatActivity {
 
     public int Totaltime = 0;
@@ -46,12 +48,13 @@ public class QuizActivity extends AppCompatActivity {
     Boolean runhandler = Boolean.valueOf(true);
     Runnable runnable;
     public TextView f46t1;
-    public TextView f47t2,t3;
+    public TextView f47t2,t3,t4;
     private ImageView img;
     public FirebaseAuth firebaseAuth;
     int f48x = 0;
     int x=0;
     private int y=0;
+    int score=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,7 @@ public class QuizActivity extends AppCompatActivity {
         this.f46t1 = (TextView) findViewById(R.id.tv_timer);
         this.f47t2 = (TextView) findViewById(R.id.tv_question);
         this.t3 = (TextView) findViewById(R.id.tv_questionno);
+        t4=(TextView)findViewById(R.id.tv_score);
         this.b1 = (Button) findViewById(R.id.btn_option1);
         b2 = (Button) findViewById(R.id.btn_option2);
         b3 = (Button) findViewById(R.id.btn_option3);
@@ -89,17 +93,28 @@ public class QuizActivity extends AppCompatActivity {
                if(answer.equals("A")){
                    Toast.makeText(QuizActivity.this, "Correct solution", Toast.LENGTH_SHORT).show();
                    b1.setBackgroundResource(R.color.green);
+                   score++;
+                   t4.setText("Score:- "+score+"/10");
                }
                else{
                    Toast.makeText(QuizActivity.this, "Sorry!! Incorrect solution", Toast.LENGTH_SHORT).show();
                    b1.setBackgroundResource(R.color.red);
+                   if(answer.equals("B")){
+                       b2.setBackgroundResource(R.color.green);
+                   }
+                   if(answer.equals("C")){
+                       b3.setBackgroundResource(R.color.green);
+                   }
+                   if(answer.equals("D")){
+                       b4.setBackgroundResource(R.color.green);
+                   }
                }
                y=1;
                 b1.setEnabled(false);
                 b2.setEnabled(false);
                 b3.setEnabled(false);
                 b4.setEnabled(false);
-                new CountDownTimer(5000,1000) {
+                new CountDownTimer(2000,1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
 
@@ -117,12 +132,20 @@ public class QuizActivity extends AppCompatActivity {
                 if(answer.equals("B")){
                     Toast.makeText(QuizActivity.this, "Correct solution", Toast.LENGTH_SHORT).show();
                     b2.setBackgroundResource(R.color.green);
+                    score++;
+                    t4.setText("Score:- "+score+"/10");
                 }
                 else{
                     Toast.makeText(QuizActivity.this, "Sorry!! Incorrect solution", Toast.LENGTH_SHORT).show();
                     b2.setBackgroundResource(R.color.red);
                     if(answer.equals("A")){
-
+                        b1.setBackgroundResource(R.color.green);
+                    }
+                    if(answer.equals("C")){
+                        b3.setBackgroundResource(R.color.green);
+                    }
+                    if(answer.equals("D")){
+                        b4.setBackgroundResource(R.color.green);
                     }
                 }
                 y=1;
@@ -130,7 +153,7 @@ public class QuizActivity extends AppCompatActivity {
                 b2.setEnabled(false);
                 b3.setEnabled(false);
                 b4.setEnabled(false);
-                new CountDownTimer(5000,1000) {
+                new CountDownTimer(2000,1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
 
@@ -148,17 +171,28 @@ public class QuizActivity extends AppCompatActivity {
                 if(answer.equals("C")){
                     Toast.makeText(QuizActivity.this, "Correct solution", Toast.LENGTH_SHORT).show();
                     b3.setBackgroundResource(R.color.green);
+                    score++;
+                    t4.setText("Score:- "+score+"/10");
                 }
                 else{
                     Toast.makeText(QuizActivity.this, "Sorry!! Incorrect solution", Toast.LENGTH_SHORT).show();
                     b3.setBackgroundResource(R.color.red);
+                    if(answer.equals("A")){
+                        b1.setBackgroundResource(R.color.green);
+                    }
+                    if(answer.equals("B")){
+                        b2.setBackgroundResource(R.color.green);
+                    }
+                    if(answer.equals("D")){
+                        b4.setBackgroundResource(R.color.green);
+                    }
                 }
                 y=1;
                 b1.setEnabled(false);
                 b2.setEnabled(false);
                 b3.setEnabled(false);
                 b4.setEnabled(false);
-                new CountDownTimer(5000,1000) {
+                new CountDownTimer(2000,1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
 
@@ -176,17 +210,28 @@ public class QuizActivity extends AppCompatActivity {
                 if(answer.equals("D")){
                     Toast.makeText(QuizActivity.this, "Correct solution", Toast.LENGTH_SHORT).show();
                     b4.setBackgroundResource(R.color.green);
+                    score++;
+                    t4.setText("Score:- "+score+"/10");
                 }
                 else{
                     Toast.makeText(QuizActivity.this, "Sorry!! Incorrect solution", Toast.LENGTH_SHORT).show();
                     b4.setBackgroundResource(R.color.red);
+                    if(answer.equals("A")){
+                        b1.setBackgroundResource(R.color.green);
+                    }
+                    if(answer.equals("B")){
+                        b2.setBackgroundResource(R.color.green);
+                    }
+                    if(answer.equals("C")){
+                        b3.setBackgroundResource(R.color.green);
+                    }
                 }
                 y=1;
                 b1.setEnabled(false);
                 b2.setEnabled(false);
                 b3.setEnabled(false);
                 b4.setEnabled(false);
-                new CountDownTimer(5000,1000) {
+                new CountDownTimer(2000,1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
 
@@ -204,13 +249,14 @@ public class QuizActivity extends AppCompatActivity {
 
     public void retrivequestion() {
         this.progressDialog.show();
+        y=0;
         img.setVisibility(View.GONE);
         t3.setText("Question- "+number);
         if (this.f48x == 1) {
             this.runhandler = Boolean.valueOf(true);
             this.f48x = 0;
         }
-        if (this.number == 3) {
+        if (this.number == 6) {
             progressDialog.dismiss();
             startActivity(new Intent(this, HomeActivity.class));
             x=1;
@@ -228,7 +274,8 @@ public class QuizActivity extends AppCompatActivity {
         b3.setBackgroundResource(R.color.dark_blue);
         b4.setBackgroundResource(R.color.dark_blue);
         sb.append(str);
-        sb.append(this.number);
+        int n=random(number);
+        sb.append(n);
         databaseReference.child(sb.toString()).addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final String value = (String) dataSnapshot.child("question").getValue(String.class);
@@ -336,7 +383,7 @@ public class QuizActivity extends AppCompatActivity {
                     } else {
                         QuizActivity mainActivity = QuizActivity.this;
                         mainActivity.f45i = 0;
-                        if (x == 0) {
+                        if (x == 0  && y==0) {
                             mainActivity.retrivequestion();
                         }
                     }
@@ -348,6 +395,26 @@ public class QuizActivity extends AppCompatActivity {
             this.runnable.run();
             this.runhandler = valueOf;
         }
+    }
+
+    public int random(int n){
+        Random random = new Random();
+        if(n==1){
+            return random.ints(1,(3)).findFirst().getAsInt();
+        }
+        if(n==2){
+            return random.ints(3,(5)).findFirst().getAsInt();
+        }
+        if(n==3){
+            return random.ints(5,(7)).findFirst().getAsInt();
+        }
+        if(n==4){
+            return random.ints(7,(9)).findFirst().getAsInt();
+        }
+        if(n==5){
+            return random.ints(9,(11)).findFirst().getAsInt();
+        }
+        return 0;
     }
 
     public void onBackPressed() {

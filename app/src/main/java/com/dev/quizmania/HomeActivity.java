@@ -179,7 +179,7 @@ public class HomeActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,QuizActivity.class));
+                startActivity(new Intent(HomeActivity.this,ChoosequizActivity.class));
             }
         });
     }

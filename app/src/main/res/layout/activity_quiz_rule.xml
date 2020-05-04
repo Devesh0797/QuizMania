@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".RulesActivity">
+    tools:context=".QuizRuleActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,10 +40,10 @@
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:text="1. There are Total 5 questions. \n\n 2. Each correct Answer gives you 1 Point.
-\n\n 3. There is no Negative Marking.\n\n 4. You have to choose one option from the given options. \n\n
+\n\n 3. There is no Negative Marking.\n\n 4. You have to write your Answer in the white coloured box. \n\n
  5. You can also submit Empty boxes. \n\n 6. There is timer on Upper Right side of the Mobile Screen.
-\n\n 7. Every question has 10 second to attempt the answer. \n\n 8. The Question number is written on upper left side of the Screen.
-\n\n 9. You can see Your Score on the top of the screen. \n\n 10. If your Answer is correct then the button will appear Green else Red."/>
+\n\n 7. Every question has its own time. \n\n 8. The Question number is written on upper left side of the Screen.
+\n\n 9. You can see Your Answers after completing the quiz."/>
 
             <Button
                 android:id="@+id/btn_startqiz"
