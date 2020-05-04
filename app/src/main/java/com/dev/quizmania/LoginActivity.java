@@ -10,8 +10,11 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private TextView t1;
     private EditText et,et1;
     private Button b3,log;
     private FirebaseAuth auth;
@@ -36,6 +40,10 @@ public class LoginActivity extends AppCompatActivity {
         log=(Button)findViewById(R.id.btn_log);
         auth = FirebaseAuth.getInstance();
         b3=(Button)findViewById(R.id.btn_sign);
+        t1=findViewById(R.id.title_reg);
+
+        Animation animation = AnimationUtils .loadAnimation(LoginActivity.this,R.anim.moving);
+        t1.startAnimation(animation);
 
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("LOGIN");
@@ -44,8 +52,9 @@ public class LoginActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Animation animation = AnimationUtils .loadAnimation(LoginActivity.this,R.anim.bounce);
+                b3.startAnimation(animation);
                 startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
-
             }
         });
 
@@ -54,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Animation animation = AnimationUtils .loadAnimation(LoginActivity.this,R.anim.bounce);
+                log.startAnimation(animation);
                 if(haveNetwork()){
                     String email = et.getText().toString().trim();
                     String password = et1.getText().toString().trim();

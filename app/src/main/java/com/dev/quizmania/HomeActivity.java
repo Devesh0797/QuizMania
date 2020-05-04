@@ -9,6 +9,8 @@ import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -101,6 +103,9 @@ public class HomeActivity extends AppCompatActivity {
                                                 pro.setVisibility(View.VISIBLE);
                                                 Picasso.with(HomeActivity.this).load(value2).fit().centerCrop().placeholder((int) R.drawable.googleg_disabled_color_18).into(HomeActivity.this.img, new Callback() {
                                                     public void onSuccess() {
+                                                        Animation animation = AnimationUtils.loadAnimation(HomeActivity.this,R.anim.blink_anim);
+                                                        t1.startAnimation(animation);
+                                                        t2.startAnimation(animation);
                                                         HomeActivity.this.t1.setText(name);
                                                         HomeActivity.this.t2.setText(gender);
                                                         HomeActivity.this.progressDialog.dismiss();
@@ -112,6 +117,11 @@ public class HomeActivity extends AppCompatActivity {
                                                     }
                                                 });
 
+                                            }
+                                            else{
+                                                pro.setVisibility(View.GONE);
+                                                HomeActivity.this.t1.setText(name);
+                                                HomeActivity.this.t2.setText(gender);
                                             }
 
                                         }

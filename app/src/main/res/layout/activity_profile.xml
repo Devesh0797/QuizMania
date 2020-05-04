@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cold"
     tools:context=".ProfileActivity">
 
 
@@ -67,13 +68,24 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/edit_text_layout"
+                    android:id="@+id/et_id1"
                     android:layout_marginTop="30dp"
+                    android:layout_below="@+id/title_reg"
+                    style="@style/TextInputLayout"
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:id="@+id/et_namee"
                         android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        style="@style/UpdateProfileEditText"
+                        android:inputType="textPersonName"
+                        android:fontFamily="@font/ibm_plex_sans_medium"
+                        android:gravity="center"
                         android:hint="Username" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -81,13 +93,24 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/edit_text_layout"
+                    android:id="@+id/et_id2"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@+id/title_reg"
+                    style="@style/TextInputLayout"
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/et_profileemail"
+                        android:textSize="18sp"
+                        style="@style/UpdateProfileEditText"
+                        android:inputType="textPersonName"
+                        android:fontFamily="@font/ibm_plex_sans_medium"
+                        android:gravity="center"
                         android:hint="Email" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +127,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Gender:"
-                        android:textSize="25dp" />
+                        android:fontFamily="@font/ibm_plex_sans_medium"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
 
                     <RadioGroup
                         android:layout_width="wrap_content"
@@ -115,7 +141,10 @@
                         <RadioButton
                             android:layout_width="100dp"
                             android:layout_height="50dp"
+                            android:layout_marginLeft="20dp"
                             android:id="@+id/male"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/ibm_plex_sans_medium"
                             android:text="Male"
                             android:textSize="20dp" />
 
@@ -123,6 +152,8 @@
                             android:layout_width="100dp"
                             android:layout_height="50dp"
                             android:id="@+id/female"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/ibmplexsans_medium"
                             android:text="Female"
                             android:textSize="20dp" />
 
@@ -136,7 +167,7 @@
                     android:id="@+id/btn_prosub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/greenYellow"
+                    android:background="@color/orange"
                     android:text="Submit">
                 </Button>
 

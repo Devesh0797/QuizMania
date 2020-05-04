@@ -22,11 +22,11 @@
                 app:layout_constraintBottom_toBottomOf="@+id/loading_reg"
                 android:fontFamily="@font/ibm_plex_sans_bold"
                 android:text="Quiz App"
-                android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:id="@+id/title_reg"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:textSize="86sp"/>
+                android:textSize="34sp"/>
 
 
             <com.google.android.material.textfield.TextInputLayout

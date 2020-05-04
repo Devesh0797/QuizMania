@@ -13,7 +13,22 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintTop_toTopOf="@+id/usename_reg2"
+                app:layout_constraintBottom_toBottomOf="@+id/loading_reg"
+                android:fontFamily="@font/ibm_plex_sans_bold"
+                android:text="Quiz App"
+                android:gravity="center"
+                android:id="@+id/title_reg"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="34sp"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -23,6 +38,7 @@
                 android:background="@drawable/edit_text_layout"
                 android:id="@+id/et_id1"
                 android:layout_marginTop="30dp"
+                android:layout_below="@+id/title_reg"
                 style="@style/TextInputLayout"
                 android:layout_height="match_parent">
 

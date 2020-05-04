@@ -54,7 +54,7 @@ public class QuizActivity extends AppCompatActivity {
     int f48x = 0;
     int x=0;
     private int y=0;
-    int score=0;
+    public static int score=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -256,9 +256,9 @@ public class QuizActivity extends AppCompatActivity {
             this.runhandler = Boolean.valueOf(true);
             this.f48x = 0;
         }
-        if (this.number == 6) {
+        if (this.number == 11) {
             progressDialog.dismiss();
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, QuizResultActivity.class));
             x=1;
             finish();
         }
@@ -413,6 +413,21 @@ public class QuizActivity extends AppCompatActivity {
         }
         if(n==5){
             return random.ints(9,(11)).findFirst().getAsInt();
+        }
+        if(n==6){
+            return random.ints(11,(13)).findFirst().getAsInt();
+        }
+        if(n==7){
+            return random.ints(13,(15)).findFirst().getAsInt();
+        }
+        if(n==8){
+            return random.ints(15,(17)).findFirst().getAsInt();
+        }
+        if(n==9){
+            return random.ints(17,(19)).findFirst().getAsInt();
+        }
+        if(n==10){
+            return random.ints(19,(21)).findFirst().getAsInt();
         }
         return 0;
     }

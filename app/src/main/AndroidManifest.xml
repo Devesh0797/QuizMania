@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/quiz_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChoosequizActivity"></activity>
+        <activity android:name=".QuizResultActivity"></activity>
+        <activity android:name=".ChoosequizActivity" />
         <activity android:name=".QuizRuleActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".RulesActivity" />

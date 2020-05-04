@@ -11,6 +11,8 @@ import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -25,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText emailid,password;
-    private TextView t1;
+    private TextView t1,t2;
     private Button register;
     private ProgressBar pro;
     private FirebaseAuth auth;
@@ -42,6 +44,12 @@ public class RegisterActivity extends AppCompatActivity {
         this.register = (Button) findViewById(R.id.regiter_reg);
         this.pro = (ProgressBar) findViewById(R.id.loading_reg);
         this.auth = FirebaseAuth.getInstance();
+
+        t2=findViewById(R.id.title_reg);
+
+        Animation animation = AnimationUtils.loadAnimation(RegisterActivity.this,R.anim.moving);
+        t2.startAnimation(animation);
+
         this.t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (RegisterActivity.this.a == 0) {

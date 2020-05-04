@@ -4,86 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".HomeActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:id="@+id/relativehome"
-        android:background="@color/black"
         android:paddingBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_profile"
-            android:layout_centerHorizontal="true"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
             android:src="@drawable/ic_profile">
+
 
         </de.hdodenhof.circleimageview.CircleImageView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/img_profile"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/red"
-            android:textSize="22sp"
-            android:text="null" />
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/ibm_plex_sans_bold"
+                    android:text="null"
+                    android:textAllCaps="true"
+                    android:textColor="@color/red"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textSize="22sp"
-            android:textColor="@color/red"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/tv_name"
-            android:text="null" />
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_name"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/ibm_plex_sans_bold"
+                    android:text="null"
+                    android:textAllCaps="true"
+                    android:textColor="@color/red"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:id="@+id/progress_pro"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/startquiz"
-        android:layout_below="@+id/relativehome"
+    <ProgressBar
         android:layout_width="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Start Quiz" />
+        android:layout_marginTop="100dp"
+        android:id="@+id/progress_pro"/>
+
+    <Button
+        android:id="@+id/startquiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativehome"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:text="Start Quizzinga Quiz" />
+
+
+    <Button
+        android:id="@+id/btn_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startquiz"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="MCQ Quiz" />
 
     <Button
         android:id="@+id/btn_deleteattemp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/startquiz"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/btn_quiz"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Delete"
         android:visibility="visible" />
-
-    <Button
-        android:id="@+id/btn_quiz"
-        android:layout_below="@+id/btn_deleteattemp"
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:text="Quiz" />
 </RelativeLayout>
