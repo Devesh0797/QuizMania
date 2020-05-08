@@ -77,6 +77,8 @@ public class HomeActivity extends AppCompatActivity {
             this.progressDialog.setMessage("Loading");
             this.progressDialog.show();
 
+            Animation animation = AnimationUtils.loadAnimation(HomeActivity.this,R.anim.blink_anim);
+
             this.demoRef = rootRef.child("Users").child(this.firebaseAuth.getCurrentUser().getUid());
             this.databaseReference = rootRef.child("Attempts");
             this.demoRef.child("name").addValueEventListener(new ValueEventListener() {
@@ -120,6 +122,9 @@ public class HomeActivity extends AppCompatActivity {
                                             }
                                             else{
                                                 pro.setVisibility(View.GONE);
+                                                Animation animation = AnimationUtils.loadAnimation(HomeActivity.this,R.anim.blink_anim);
+                                                t1.startAnimation(animation);
+                                                t2.startAnimation(animation);
                                                 HomeActivity.this.t1.setText(name);
                                                 HomeActivity.this.t2.setText(gender);
                                             }

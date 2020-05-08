@@ -47,8 +47,9 @@
                     android:layout_weight="0.5"
                     android:fontFamily="@font/ibm_plex_sans_bold"
                     android:text="null"
+                    android:gravity="center"
                     android:textAllCaps="true"
-                    android:textColor="@color/red"
+                    android:textColor="@color/floral_white"
                     android:textSize="26sp"
                     android:textStyle="bold" />
 
@@ -59,10 +60,11 @@
                     android:layout_below="@+id/tv_name"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:gravity="center"
                     android:fontFamily="@font/ibm_plex_sans_bold"
                     android:text="null"
                     android:textAllCaps="true"
-                    android:textColor="@color/red"
+                    android:textColor="@color/floral_white"
                     android:textSize="26sp"
                     android:textStyle="bold" />
 

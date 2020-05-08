@@ -75,7 +75,7 @@ public class QuizActivity extends AppCompatActivity {
         this.firebaseAuth = FirebaseAuth.getInstance();
         final String userid = this.firebaseAuth.getCurrentUser().getUid();
 
-        this.demoRef = this.rootRef.child("Quiz").child("Gk Quiz").child("Slot1");
+        this.demoRef = this.rootRef.child("Quiz").child(ChoosequizActivity.quiz).child("Slot1");
 
 
         this.progressDialog = new ProgressDialog(this);

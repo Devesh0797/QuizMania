@@ -25,6 +25,28 @@
                 android:textSize="20sp"
                 android:text="General Knowledge"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_hq"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btn_gk"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:text="History Quiz"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_ic"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/btn_hq"
+                android:textSize="20sp"
+                android:text="Indian Culture"/>
+
 
 
 
