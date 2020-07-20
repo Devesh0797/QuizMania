@@ -261,7 +261,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void uploadFile() {
         if (this.filepath != null) {
-            this.choose.setEnabled(false);
             this.pro.setVisibility(View.VISIBLE);
             this.progressDialog.show();
             StorageReference storageReference = this.mStorageRef;

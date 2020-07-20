@@ -1,11 +1,13 @@
 package com.dev.quizmania;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -399,35 +401,66 @@ public class QuizActivity extends AppCompatActivity {
 
     public int random(int n){
         Random random = new Random();
+
         if(n==1){
-            return random.ints(1,(3)).findFirst().getAsInt();
+            int min = 1;
+            int max = 2;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==2){
-            return random.ints(3,(5)).findFirst().getAsInt();
+            int min = 3;
+            int max = 4;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==3){
-            return random.ints(5,(7)).findFirst().getAsInt();
+            int min = 5;
+            int max = 6;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==4){
-            return random.ints(7,(9)).findFirst().getAsInt();
+            int min = 7;
+            int max = 8;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==5){
-            return random.ints(9,(11)).findFirst().getAsInt();
+            int min = 9;
+            int max = 10;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==6){
-            return random.ints(11,(13)).findFirst().getAsInt();
+            int min = 11;
+            int max = 12;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==7){
-            return random.ints(13,(15)).findFirst().getAsInt();
+            int min = 13;
+            int max = 14;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==8){
-            return random.ints(15,(17)).findFirst().getAsInt();
+            int min = 15;
+            int max = 16;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==9){
-            return random.ints(17,(19)).findFirst().getAsInt();
+            int min = 17;
+            int max = 18;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         if(n==10){
-            return random.ints(19,(21)).findFirst().getAsInt();
+            int min = 19;
+            int max = 20;
+            int random_double = (int)(Math.random() * (max - min + 1) + min);
+            return random_double;
         }
         return 0;
     }

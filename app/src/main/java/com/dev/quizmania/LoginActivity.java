@@ -136,7 +136,6 @@ public class LoginActivity extends AppCompatActivity implements ConnectivityRece
                     have_MobileData = true;
         }
         return have_MobileData || have_WIFI;
-
     }
 
     private void showSnack(boolean isConnected) {

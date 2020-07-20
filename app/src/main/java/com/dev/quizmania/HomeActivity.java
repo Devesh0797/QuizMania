@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -17,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dev.quizmania.Connectivity.ConnectivityReceiver;
+import com.dev.quizmania.Connectivity.MyApplication;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +37,7 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.io.IOException;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener  {
 
     public FirebaseAuth firebaseAuth;
     private DatabaseReference rootRef,demoRef,databaseReference;
@@ -43,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
     private ProgressBar pro;
     private String name,gender;
 
-    private FirebaseAnalytics mFirebaseAnalytics;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
 
 
         b1=findViewById(R.id.startquiz);
@@ -65,13 +70,11 @@ public class HomeActivity extends AppCompatActivity {
         this.rootRef = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = this.firebaseAuth.getCurrentUser();
-
-
         if (user == null) {
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             finish();
         }
-        else {
+        else{
             this.progressDialog = new ProgressDialog(this);
             this.progressDialog.setTitle("Your Account");
             this.progressDialog.setMessage("Loading");
@@ -232,5 +235,53 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        firebaseAuth = FirebaseAuth.getInstance();
+//        FirebaseUser user = this.firebaseAuth.getCurrentUser();
+        if (firebaseAuth == null) {
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            finish();
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        final IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+
+        ConnectivityReceiver connectivityReceiver = new ConnectivityReceiver();
+        registerReceiver(connectivityReceiver, intentFilter);
+
+        // register connection status listener
+        MyApplication.getInstance().setConnectivityListener(this);
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        Toast.makeText(this, "Network change", Toast.LENGTH_SHORT).show();
+        showSnack(isConnected);
+    }
+
+    private void showSnack(boolean isConnected) {
+        String message;
+        int color;
+        if (isConnected) {
+            message = "Good! Connected to Internet";
+            color = Color.WHITE;
+
+        } else {
+            message = "Sorry! Not connected to internet";
+            color = Color.RED;
+
+        }
+
+        Toast.makeText(HomeActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }
